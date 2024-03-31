@@ -1,0 +1,19 @@
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "include": [
+    "project/**/vite.config.*",
+    "vite.base.config.*",
+    "project/**/vitest.config.*",
+    "project/**/cypress.config.*",
+    "project/**/nightwatch.conf.*",
+    "project/**/playwright.config.*"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["node"]
+  }
+}
