@@ -7,8 +7,11 @@ export default defineConfig({
   ...commonConfig,
   plugins: [
     vue({
-      exclude: ["micro-app"],
-      customElement: "micro-app",
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => ["micro-app"].includes(tag),
+        },
+      },
     }),
     ...elementPlugin,
   ],
