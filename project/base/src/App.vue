@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BaseHeader from "./components/BaseHeader.vue";
+  import BaseHeader from './components/BaseHeader.vue'
 </script>
 
 <template>
@@ -12,15 +12,15 @@ import BaseHeader from "./components/BaseHeader.vue";
 </template>
 
 <style scoped lang="less">
-.base-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .base-main {
-    flex: 1;
-    height: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
+  .base-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .base-main {
+      flex: 1;
+      height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
   }
-}
 </style>

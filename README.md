@@ -1,45 +1,38 @@
-# base
+# 评物后台管理系统（monorepo + micro-app）
 
-This template should help get you started developing with Vue 3 in Vite.
+## 项目介绍
 
-## Recommended IDE Setup
+monorepo + micro-app + ts + vite + vue3 + element-plus
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## 常用命令
 
 ```sh
-npm install
+pnpm install, pnpm dev, pnpm build, pnpm lint
 ```
 
-### Compile and Hot-Reload for Development
+## 目录介绍
 
 ```sh
-npm run dev
+├── common                       # 共享模块（pnpm workspace）
+│   ├── assets                     # 全局静态资源
+│   ├── components                 # 全局公用组件
+├── project                      # 所有项目（数据后台为单独项目）
+│   ├── base                       # microApp基座
+│   ├── main-admin                 # 主后台
+│   ├── statistics-admin           # 统计后台
+│   ├── audit-admin                # 审核后台
 ```
 
-### Type-Check, Compile and Minify for Production
+## 开发规范
 
-```sh
-npm run build
-```
+- 所有项目均使用pnpm管理依赖，安装在根目录的node_modules
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+  ```sh
+  pnpm i xxx -W -D
+  pnpm i xxx -W -S
 
-```sh
-npm run test:unit
-```
+  ```
 
-### Lint with [ESLint](https://eslint.org/)
+- .vue组件命名：统一使用大驼峰命名AaBb.vue，index.vue除外，
 
-```sh
-npm run lint
-```
+- 文件夹命名：统一使用aa-bb的形式

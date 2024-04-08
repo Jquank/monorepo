@@ -1,0 +1,36 @@
+/** 常用原子css*/
+
+// 基本margin和padding
+@distance-list: range(4, 200, 2);
+each(@distance-list, {
+  .margin-@{value} {
+    margin: @value*1px;
+  }
+  .ml-@{value} {
+    margin-left: @value*1px;
+  }
+  .mr-@{value} {
+    margin-right: @value*1px;
+  }
+  .mt-@{value} {
+    margin-top: @value*1px;
+  }
+  .mb-@{value} {
+    margin-bottom: @value*1px;
+  }
+  .padding-@{value} {
+    padding: @value*1px;
+  }
+  .pl-@{value} {
+    padding-left: @value*1px;
+  }
+  .pr-@{value} {
+    padding-right: @value*1px;
+  }
+  .pt-@{value} {
+    padding-top: @value*1px;
+  }
+  .pb-@{value} {
+    padding-bottom: @value*1px;
+  }
+});
