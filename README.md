@@ -1,4 +1,4 @@
-# 评物后台管理系统（monorepo + micro-app）
+# 评物后台管理系统
 
 ## 项目介绍
 
@@ -15,7 +15,8 @@ pnpm install, pnpm dev, pnpm build, pnpm lint
 ```sh
 ├── common                       # 共享模块（pnpm workspace）
 │   ├── assets                     # 全局静态资源
-│   ├── components                 # 全局公用组件
+│   ├── components                 # 全局公用组件（可发布npm）
+│   ├── utils                      # 全局工具类（可发布npm）
 ├── project                      # 所有项目（数据后台为单独项目）
 │   ├── base                       # microApp基座
 │   ├── main-admin                 # 主后台
@@ -28,8 +29,8 @@ pnpm install, pnpm dev, pnpm build, pnpm lint
 - 所有项目均使用pnpm管理依赖，安装在根目录的node_modules
 
   ```sh
-  pnpm i xxx -W -D
-  pnpm i xxx -W -S
+  pnpm i xxx -w -D
+  pnpm i xxx -w -S
 
   ```
 

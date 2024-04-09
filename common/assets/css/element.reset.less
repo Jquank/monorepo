@@ -1,9 +1,32 @@
 /** element-plus 变量重写 */
-html.default {
-  --el-color-primary: #186dec;
-}
-
-html.dark {
+html.base,
+.micro-child {
+  --el-color-primary: #3377ff;
 }
 
 /** element-plus 部分样式重写 */
+
+.micro-child {
+  // 弹窗默认样式改写
+  .el-dialog {
+    width: 626px;
+    --el-dialog-padding-primary: 20px;
+    .el-dialog__body {
+      border-top: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      height: 429px;
+      overflow-y: auto;
+    }
+    .el-dialog__title {
+      font-weight: 600;
+      font-size: 18px;
+      color: #1a1a1a;
+      margin: 0 -20px;
+    }
+  }
+
+  // 大尺寸弹窗样式，请加类名 modal-class="_dialog-large"
+  ._dialog-large .el-dialog {
+    width: 900px;
+  }
+}

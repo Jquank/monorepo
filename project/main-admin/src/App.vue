@@ -1,9 +1,10 @@
-<script setup lang="ts">
-  import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
-  <RouterLink to="/">首页</RouterLink>
-  <RouterLink to="/about">about</RouterLink>
-  <RouterView></RouterView>
+  <el-config-provider :z-index="3000" :locale="zhCn">
+    <RouterView />
+  </el-config-provider>
 </template>
+
+<script lang="ts" setup>
+  import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+  // import en from 'element-plus/dist/locale/en.mjs'
+</script>

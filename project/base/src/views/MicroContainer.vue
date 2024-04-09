@@ -1,5 +1,10 @@
 <template>
-  <micro-app :name="data.name" :url="data.url" iframe style="height: 100%"></micro-app>
+  <micro-app
+    :name="data.name"
+    :url="data.url"
+    iframe
+    style="height: 100%"
+    :class="data.name !== 'data-admin' ? 'micro-child' : ''"></micro-app>
 </template>
 
 <script setup lang="ts">

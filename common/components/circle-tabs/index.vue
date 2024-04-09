@@ -1,5 +1,5 @@
 <template>
-  <el-tabs v-model="activeName" class="_circle-tabs" @tab-change="tabChange">
+  <el-tabs v-model="activeName" class="nh-circle-tabs" @tab-change="tabChange">
     <el-tab-pane :label="props.title" name="_title" v-if="props.title" disabled class="title-pane"></el-tab-pane>
     <slot></slot>
     <el-tab-pane v-if="props.showAddBtn" name="_addbtn" class="addbtn-pane" disabled>
@@ -42,7 +42,7 @@
 </script>
 
 <style lang="less">
-  ._circle-tabs {
+  .nh-circle-tabs {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -63,11 +63,6 @@
     }
     .el-tabs__nav .el-tabs__item {
       color: inherit;
-    }
-    .el-tabs__nav .el-tabs__item.is-active .circle-tag {
-      // font-weight: 700;
-      // color: #4d70ff;
-      // background-color: rgba(214, 222, 252);
     }
     .el-tabs__content {
       .el-tab-pane {

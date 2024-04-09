@@ -6,8 +6,8 @@
     "project/**/src/**/*",
     "project/**/src/**/*.vue",
     "common/env.d.ts",
-    "common/src/**/*",
-    "common/src/**/*.vue"
+    "common/**/*",
+    "common/**/*.vue"
   ],
   "exclude": ["project/**/src/**/__tests__/*"],
   "compilerOptions": {

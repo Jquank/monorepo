@@ -1,10 +1,9 @@
 <script setup lang="ts">
   import { ref, watchEffect } from 'vue'
   import { useRouter, useRoute } from 'vue-router'
-  import logoUrl from 'common/src/assets/images/logo.png'
-  import CircleTabs from 'common/src/components/circle-tabs/index.vue'
-  import CircleTag from 'common/src/components/circle-tabs/CircleTag.vue'
-  import SvgIcon from 'common/src/components/svg-icon/index.vue'
+  import logoUrl from 'common/assets/images/logo.png'
+  import CircleTabs from 'common/components/circle-tabs/index.vue'
+  import CircleTag from 'common/components/circle-tabs/CircleTag.vue'
 
   const route = useRoute()
   const router = useRouter()
