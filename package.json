@@ -59,7 +59,7 @@
     "project/**/src/**/*.{js,jsx,ts,tsx,vue}": [
       "eslint"
     ],
-    "test/**/*.{ts,tsx,js,vue}": [
+    "common/**/*.{js,jsx,ts,tsx,vue}": [
       "eslint"
     ]
   }
