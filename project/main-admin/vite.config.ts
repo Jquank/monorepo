@@ -1,7 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-import { commonConfig, elementPlugin } from '../../vite.base.config'
+import { commonConfig, elementPlugin, serverConfig } from '../../vite.base.config'
 // https://vitejs.dev/config/
 export default defineConfig({
   ...commonConfig,
@@ -12,6 +12,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: 5100
+    port: 5001,
+    ...serverConfig
   }
 })

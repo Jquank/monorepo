@@ -1,7 +1,19 @@
 /** element-plus 变量重写 */
+
+// element共用变量reset
 .micro-base,
 .micro-child {
   --el-color-primary: #3377ff;
+}
+
+// element亮色主题变量reset
+html .micro-base,
+html .micro-child {
+}
+
+// element暗色主题变量reset
+html.dark .micro-base,
+html.dark .micro-child {
 }
 
 /** element-plus 部分样式重写 */
@@ -36,9 +48,9 @@
 
   // el-form 默认样式改写
   .el-form {
-    padding-left: 10px;
     .el-form-item__label-wrap {
       position: relative;
+      padding-left: 10px;
       .el-form-item__label {
         font-weight: 550;
         padding-right: 24px;
@@ -46,11 +58,24 @@
     }
     .el-form-item__label-wrap > .el-form-item__label::before {
       position: absolute;
-      left: -10px;
+      left: 0;
     }
     .el-input,
     .el-select {
       width: 230px;
+    }
+  }
+
+  // el-table 默认样式改写
+  .el-table {
+    .el-table__header-wrapper,
+    .el-table__fixed-header-wrapper {
+      th {
+        background-color: #f7f8fa !important;
+        color: #000;
+        height: 50px;
+        font-size: 14px;
+      }
     }
   }
 }

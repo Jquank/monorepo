@@ -23,6 +23,8 @@
   })
   const tabChange = (name: number) => {
     const item = tabPanes.find((item) => item.name === name)
+    console.log(item)
+
     router.push({ name: item?.routeName || 'main' })
   }
 </script>

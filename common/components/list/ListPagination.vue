@@ -32,7 +32,7 @@
   let layout = ref(layoutPreset)
 
   watchEffect(() => {
-    let pageSizes = attrs['page-sizes']
+    let pageSizes = attrs['page-sizes'] as number[]
     if (pageSizes) {
       page.pageSize = pageSizes[0]
     }
@@ -69,6 +69,6 @@
   .el-pagination {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 10px 0;
+    padding-top: 20px;
   }
 </style>

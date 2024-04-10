@@ -12,6 +12,8 @@
     "build": "npm-run-all type-check --parallel build-base build-main-admin",
     "build-base": "pnpm -F base build",
     "build-main-admin": "pnpm -F main-admin build",
+    "build-statistics-admin": "pnpm -F statistics-admin build",
+    "build-audit-admin": "pnpm -F audit-admin build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path ./.gitignore",
     "lint-staged": "lint-staged",

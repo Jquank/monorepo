@@ -6,18 +6,11 @@
 
 <script setup lang="ts">
   import { computed } from 'vue'
-  const props = defineProps({
-    icon: {
-      type: String,
-      required: true
-    },
-    color: {
-      type: String
-    },
-    size: {
-      type: Number
-    }
-  })
+  const props = defineProps<{
+    icon: string
+    color?: string
+    size?: number | string
+  }>()
 
   const styleContent = computed(() => {
     return {

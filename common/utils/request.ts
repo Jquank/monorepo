@@ -1,6 +1,6 @@
 //文档地址：http://www.axios-js.com/zh-cn/docs/
 import axios, { type AxiosRequestConfig } from 'axios'
-import { ElNotification } from 'element-plus'
+// import { ElNotification } from 'element-plus'
 import { ElMessage } from 'element-plus'
 
 // 创建axios实列

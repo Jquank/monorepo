@@ -1,0 +1,23 @@
+.micro-child {
+  // 整体布局
+  .micro-child-container {
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    background-color: var(--nh-main-bgcolor);
+    & > .micro-child-nav {
+      width: var(--nh-nav-width);
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: var(--nh-main-bgcolor);
+    }
+    & > .micro-child-section {
+      flex: 1;
+      height: 100%;
+      padding: 20px;
+      overflow-y: auto;
+      position: relative;
+      background-color: var(--nh-sub-bgcolor);
+    }
+  }
+}

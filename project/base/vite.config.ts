@@ -1,7 +1,7 @@
-import { fileURLToPath, URL } from "node:url";
-import vue from "@vitejs/plugin-vue";
-import { defineConfig } from "vite";
-import { commonConfig, elementPlugin } from "../../vite.base.config";
+import { fileURLToPath, URL } from 'node:url'
+import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+import { commonConfig, serverConfig, elementPlugin } from '../../vite.base.config'
 // https://vitejs.dev/config/
 export default defineConfig({
   ...commonConfig,
@@ -9,18 +9,19 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (tag) => ["micro-app"].includes(tag),
-        },
-      },
+          isCustomElement: (tag) => ['micro-app'].includes(tag)
+        }
+      }
     }),
-    ...elementPlugin,
+    ...elementPlugin
   ],
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
   },
   server: {
     port: 5000,
-  },
-});
+    ...serverConfig
+  }
+})
