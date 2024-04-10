@@ -26,14 +26,13 @@ pnpm install, pnpm dev, pnpm build, pnpm lint
 
 ## 开发规范
 
+- 基座项目base，无法使用通用样式，需要自己手写在组件里（加scoped），也不允许使用全局类名（如果要用，请以micro-base-xxx开头）
+  [https://micro-zoe.github.io/micro-app/docs.html#/zh-cn/scopecss]
 - 所有项目均使用pnpm管理依赖，安装在根目录的node_modules
-
   ```sh
   pnpm i xxx -w -D
   pnpm i xxx -w -S
-
   ```
-
 - .vue组件命名：统一使用大驼峰命名AaBb.vue，index.vue除外，
 
 - 文件夹命名：统一使用aa-bb的形式
