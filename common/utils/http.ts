@@ -27,21 +27,19 @@ instance.interceptors.request.use(
 // 响应拦截
 instance.interceptors.response.use(
   (res) => {
-    return res.data ? res.data : res
+    const result = res.data ? res.data : res
+    const msg = result.message || '接口异常，请联系管理员'
+    if (result.code >= 400) {
+      ElMessage({ message: msg, type: 'error' })
+      return Promise.reject(result)
+    }
+    return result
   },
   (error) => {
-    // 非手动取消
-    // if (!axios.isCancel(err)) {
-    // }
-    // removeRequestList(err.response ? err.response.config.url : undefined, err)
-    const response = error.response
-    if (response.status === 410) {
-      ElMessage.error(response.data.message || '请求失败')
-    } else {
-      ElNotification.error(error.message || '系统出错，请联系管理员')
-    }
+    const msg = error.message || '接口异常，请联系管理员'
+    ElMessage({ message: msg, type: 'error' })
     return Promise.reject(error)
   }
 )
-const $http = instance
-export default $http
+const request = instance
+export default request

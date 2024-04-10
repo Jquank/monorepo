@@ -23,7 +23,6 @@
   })
   const tabChange = (name: number) => {
     const item = tabPanes.find((item) => item.name === name)
-    console.log(item, 'item')
     router.push({ name: item?.routeName || 'main' })
   }
 </script>
@@ -39,9 +38,9 @@
         <el-tab-pane v-for="(item, index) in tabPanes" :key="item.name" :name="item.name">
           <template #label>
             <CircleTag
+              style="margin-right: 40px"
               :active="index === activeName - 1"
               width="96px"
-              class="mr-40"
               :showClose="false"
               bgColor="transparent"
               color="rgba(255,255,255,0.85)">
@@ -52,7 +51,12 @@
       </CircleTabs>
     </nav>
     <div class="user">
-      <SvgIcon icon="user" :size="24"></SvgIcon>
+      <div class="bell">
+        <SvgIcon icon="refresh" :size="24" color="#fff"></SvgIcon>
+      </div>
+      <div class="avatar">
+        <SvgIcon icon="refresh" :size="32" color="#fff"></SvgIcon>
+      </div>
     </div>
   </header>
 </template>
@@ -80,6 +84,15 @@
     }
     .user {
       padding-right: 24px;
+      .avatar,
+      .bell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
     }
     .header-nav {
       flex: 1;
