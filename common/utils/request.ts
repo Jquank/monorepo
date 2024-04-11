@@ -9,10 +9,9 @@ const axiosConfig: AxiosRequestConfig = {
   baseURL: '',
   timeout: 1 * 60 * 1000
   // withCredentials: true,
-  // cancelRepeatRequest: false // 是否取消重复请求
 }
 const instance = axios.create(axiosConfig)
-const AUTH_TOKEN = sessionStorage.getItem('token') || ''
+const AUTH_TOKEN = localStorage.getItem('token') || ''
 instance.defaults.headers.common['Authorization'] = AUTH_TOKEN
 
 // 请求拦截

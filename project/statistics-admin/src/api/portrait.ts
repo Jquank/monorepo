@@ -2,7 +2,7 @@
 import request from 'common/utils/request'
 
 /** 获取肖像列表（带搜索） */
-export const getPortraitListBy = (data: any): any => {
+export const getPortraitListBy = (data: any): Promise<any> => {
   return request({
     url: '/classification/portrait/listByFilter',
     method: 'post',
@@ -11,7 +11,7 @@ export const getPortraitListBy = (data: any): any => {
 }
 
 /** 获取肖像列表 */
-export const getPortraitList = (params: any): any => {
+export const getPortraitList = (params: any): Promise<any> => {
   return request({
     url: '/classification/portrait/list',
     method: 'get',
@@ -20,7 +20,7 @@ export const getPortraitList = (params: any): any => {
 }
 
 /** 获取过滤字典数据 */
-export const getDictData = (): any => {
+export const getDictData = (): Promise<any> => {
   return request({
     url: '/classification/portrait/getFilter',
     method: 'get'
@@ -28,7 +28,7 @@ export const getDictData = (): any => {
 }
 
 /** 删除肖像 */
-export const deletePortrait = (ids: string): any => {
+export const deletePortrait = (ids: string): Promise<any> => {
   return request({
     url: `/classification/portrait/${ids}`,
     method: 'delete'
@@ -36,7 +36,7 @@ export const deletePortrait = (ids: string): any => {
 }
 
 /** 新增肖像 */
-export const postPortrait = (data: any): any => {
+export const postPortrait = (data: any): Promise<any> => {
   return request({
     url: '/classification/portrait',
     method: 'post',
@@ -45,7 +45,7 @@ export const postPortrait = (data: any): any => {
 }
 
 /** 查询单个肖像信息 */
-export const getPortraitById = (id: string): any => {
+export const getPortraitById = (id: string): Promise<any> => {
   return request({
     url: `/classification/portrait/${id}`,
     method: 'get'
@@ -53,7 +53,7 @@ export const getPortraitById = (id: string): any => {
 }
 
 /** 修改肖像信息 */
-export const putPortrait = (data: string): any => {
+export const putPortrait = (data: string): Promise<any> => {
   return request({
     url: '/classification/portrait',
     method: 'put',
