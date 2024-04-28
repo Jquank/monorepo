@@ -1,0 +1,25 @@
+{
+  "name": "@nh/components",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
+  "version": "0.0.2",
+  "description": "@nh/components",
+  "scripts": {
+    "build": "vite build",
+    "publish": "npm publish"
+  },
+  "git-checks": false,
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

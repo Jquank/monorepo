@@ -12,5 +12,5 @@ import '../assets/css/index.less'
 if (import.meta.env.MODE === 'production') {
   import('../assets/icons/iconfont.js')
 } else {
-  import('//at.alicdn.com/t/c/font_4490668_odpf6d8c0m8.js')
+  import('//at.alicdn.com/t/c/font_4490668_7idmdf3ahn.js')
 }

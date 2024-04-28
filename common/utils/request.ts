@@ -8,7 +8,7 @@ const axiosConfig: AxiosRequestConfig = {
   // baseURL: import.meta.env.VITE_HTTP_URL || '',
   baseURL: '',
   timeout: 1 * 60 * 1000
-  // withCredentials: true,
+  // withCredentials: true
 }
 const instance = axios.create(axiosConfig)
 const AUTH_TOKEN = localStorage.getItem('token') || ''
@@ -26,8 +26,8 @@ instance.interceptors.request.use(
 // 响应拦截
 instance.interceptors.response.use(
   (res) => {
-    const result = res.data ? res.data : res
-    const msg = result.message || '接口异常，请联系管理员'
+    const result = res.data || res
+    const msg = result.message || result.msg || '接口异常，请联系管理员'
     if (result.code >= 400) {
       ElMessage({ message: msg, type: 'error' })
       return Promise.reject(result)
@@ -35,7 +35,8 @@ instance.interceptors.response.use(
     return result
   },
   (error) => {
-    const msg = error.message || '接口异常，请联系管理员'
+    const result = error.response ? error.response.data : error.response
+    const msg = result.message || result.msg || '接口异常，请联系管理员'
     ElMessage({ message: msg, type: 'error' })
     return Promise.reject(error)
   }

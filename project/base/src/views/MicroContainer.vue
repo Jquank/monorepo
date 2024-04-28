@@ -5,12 +5,16 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 const route = useRoute()
-const router = useRouter()
 const getUrl = (name: string) => {
   if (import.meta.env.MODE === 'development') {
-    return 'http://' + location.hostname + ':' + import.meta.env['VITE_URL_' + name!.toUpperCase()].slice(-5, -1)
+    if (name === 'data') {
+      return import.meta.env['VITE_URL_' + name!.toUpperCase()]
+    } else {
+      return 'http://' + location.hostname + ':' + import.meta.env['VITE_URL_' + name!.toUpperCase()].slice(-5, -1)
+    }
+
   } else {
     return import.meta.env['VITE_URL_' + name!.toUpperCase()]
   }

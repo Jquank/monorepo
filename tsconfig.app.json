@@ -3,13 +3,10 @@
   "include": [
     "./*.d.ts",
     "project/**/*.d.ts",
-    "project/**/src/**/*",
     "project/**/src/**/*.vue",
     "project/**/src/**/*.ts",
     "common/*.d.ts",
-    "common/**/*",
     "common/**/*.vue",
-    "common/**/**/*.vue",
     "common/**/*.ts"
   ],
   "exclude": ["project/**/src/**/__tests__/*"],
