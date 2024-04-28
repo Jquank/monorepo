@@ -1,26 +1,24 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "include": [
-    "./env.d.ts",
-    "project/**/env.d.ts",
+    "./*.d.ts",
+    "project/**/*.d.ts",
     "project/**/src/**/*",
     "project/**/src/**/*.vue",
-    "common/env.d.ts",
+    "project/**/src/**/*.ts",
+    "common/*.d.ts",
     "common/**/*",
-    "common/**/*.vue"
+    "common/**/*.vue",
+    "common/**/**/*.vue",
+    "common/**/*.ts"
   ],
   "exclude": ["project/**/src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "project/base/src/*",
-        "project/main-admin/src/*",
-        "project/statistics-admin/src/*",
-        "project/audit-admin/src/*"
-      ]
+      "@/*": ["project/base/src/*", "project/main-admin/src/*", "project/statistics-admin/src/*", "project/audit-admin/src/*"]
     }
   }
 }

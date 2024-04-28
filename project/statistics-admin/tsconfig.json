@@ -1,8 +1,8 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "extends": "../../tsconfig.app.json",
   "compilerOptions": {
-    "baseUrl": "./",
+    "types": ["element-plus/global", "../../global"],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
